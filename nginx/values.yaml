@@ -1,0 +1,7 @@
+deployement:
+  imageversion: alpine  #here we can change version
+  replicas: 1
+services:
+  port: 80
+  targetPort: 80
+
