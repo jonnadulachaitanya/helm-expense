@@ -1,4 +1,4 @@
-deployement:
+deployment:
   imageversion: alpine  #here we can change version
   replicas: 1
 service:
