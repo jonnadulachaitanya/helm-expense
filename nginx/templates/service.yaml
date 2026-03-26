@@ -10,5 +10,5 @@ spec:
   ports:
   - name: nginx-svc-port
     protocol: TCP
-    port: {{ .values.services.port }}
-    targetPort: {{ .values.services.targetPort }}
+    port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}
