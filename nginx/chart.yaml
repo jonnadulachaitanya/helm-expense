@@ -1,4 +1,0 @@
-apiVersion: apps/v1
-name: nginx
-version: 1.0.0 #This we will change whenevr we made changes values
-description: This chart is to manage nginx application
