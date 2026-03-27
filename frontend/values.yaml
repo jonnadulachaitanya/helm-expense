@@ -1,4 +1,4 @@
-deployments:
+deployment:
   replicas: 2
   imageversion: v1
   cpu: 100m
