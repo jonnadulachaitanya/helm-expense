@@ -17,6 +17,6 @@ spec:
         app: nginx
         tier: frontend
     spec:
-      container:
+      containers:
       - name: nginx
         image: nginx:{{ .Values.deployment.imageversion }}
