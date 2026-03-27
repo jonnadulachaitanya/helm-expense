@@ -1,4 +1,4 @@
-deployement:
+deployment:
   replicas: 1
   imageversion: v1
 service:
