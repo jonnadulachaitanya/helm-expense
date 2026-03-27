@@ -8,7 +8,7 @@ metadata:
     tier: db
     project: expense
 spec:
-  replicas: {{ .values.deployment.replicas }}
+  replicas: {{ .Values.deployment.replicas }}
   selector:
     matchLabels:
       app: mysql
@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: chaitanyaj293/mysql:{{ .values.deployment.imageversion }}
+        image: chaitanyaj293/mysql:{{ .Values.deployment.imageversion }}
 ---
 apiVersion: v1
 kind: Service
@@ -38,5 +38,5 @@ spec:
   ports:
   - name: mysql-svc-port
     protocol: TCP
-    port: {{ .values.services.port }}
-    targetPort: {{ .values.services.targetPort }}
+    port: {{ .Values.services.port }}
+    targetPort: {{ .Values.services.targetPort }}
