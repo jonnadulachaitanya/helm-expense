@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: chaitanyaj293/frontend:{{ .Values.deployement.imageversion }}
+        image: chaitanyaj293/frontend:{{ .Values.deployment.imageversion }}
         resources:
           requests:
             cpu: {{ .Values.deployment.cpu }}
