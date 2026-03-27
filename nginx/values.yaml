@@ -1,6 +1,6 @@
 deployment:
   replicas: 1
-  imageversion: v1
+  imageversion: alpine
 service:
   port: 3306
   targetPort: 3306
