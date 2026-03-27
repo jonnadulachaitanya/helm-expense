@@ -8,7 +8,7 @@ metadata:
     tier: web
     project: expense
 spec:
-  replicas: {{ .values.deployement.replicas }}
+  replicas: {{ .Values.deployement.replicas }}
   selector:
     matchLabels:
       app: frontend
@@ -23,14 +23,14 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: chaitanyaj293/frontend:{{ .values.deployement.imageversion }}
+        image: chaitanyaj293/frontend:{{ .Values.deployement.imageversion }}
         resources:
           requests:
-            cpu: {{ .values.deployment.cpu }}
-            memory: {{ .values.deployment.memory }}
+            cpu: {{ .Values.deployment.cpu }}
+            memory: {{ .Values.deployment.memory }}
           limits:
-            cpu: {{ .values.deployment.cpu }}
-            memory: {{ .values.deployment.memory }}
+            cpu: {{ .Values.deployment.cpu }}
+            memory: {{ .Values.deployment.memory }}
 ---
 apiVersion: v1
 kind: Service
@@ -46,8 +46,8 @@ spec:
   ports:
   - name: frontend-svc-port
     protocol: TCP
-    port: {{ .values.service.port }}
-    targetPort: {{ .values.service.targetPort }}
+    port: {{ .Values.service.port }}
+    targetPort: {{ .Values.service.targetPort }}
 ---
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
@@ -61,4 +61,4 @@ spec:
    name: frontend
  minReplicas: 1
  maxReplicas: 10
- targetCPUUtilizationPercentage: {{ .values.hpa.targetCPUUtilizationPercentage }} # usually 75 in real environment
+ targetCPUUtilizationPercentage: {{ .Values.hpa.targetCPUUtilizationPercentage }} # usually 75 in real environment
